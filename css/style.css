@@ -10,23 +10,35 @@ ul, li {
   margin-inline-end: 0;
   padding-inline-start: 0; }
 
-/* common */
 header {
   padding-top: 25px;
-  text-align: center; }
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; }
   header h1 {
-    font-family: 'M PLUS 1p', sans-serif; }
+    font-family: 'M PLUS 1p', sans-serif;
+    font-size: 4vw; }
+    @media screen and (max-width: 575.98px) {
+      header h1 {
+        font-size: 6vw; } }
     header h1 .header-subI {
-      width: 200px;
-      margin: auto 18vw -2vw;
+      width: 18vw;
+      margin: auto 0 0;
       display: block;
       padding: 10px 15px;
       border-radius: 15px;
-      font-size: .7em;
+      font-size: 2.3vw;
       color: #e5005a;
       vertical-align: top;
       position: relative;
       transform: rotate(-5deg); }
+      @media screen and (max-width: 575.98px) {
+        header h1 .header-subI {
+          width: 32vw;
+          padding: 15px 5px;
+          margin: auto 3vw 2vw;
+          font-size: 4.5vw; } }
       header h1 .header-subI::before {
         content: "";
         display: block;
@@ -34,7 +46,7 @@ header {
         height: 40px;
         border-left: 2px solid #e5005a;
         position: absolute;
-        left: -15px;
+        left: -10px;
         transform: rotate(-35deg);
         top: 10px; }
       header h1 .header-subI::after {
@@ -50,7 +62,7 @@ header {
     header h1 .header-point {
       color: #e5005a;
       font-family: 'Gugi', cursive;
-      font-size: 6vw; }
+      font-size: 6.5vw; }
 
 footer {
   padding-bottom: 5px;
@@ -66,12 +78,18 @@ section {
   padding: 45px 10vw;
   background: #fff;
   position: relative; }
+  @media screen and (max-width: 575.98px) {
+    section {
+      padding: 45px 4vw; } }
   section h2 {
     margin-bottom: 20px;
     font-family: 'M PLUS 1p', sans-serif;
     display: flex;
     align-items: center;
     font-weight: 600; }
+    @media screen and (max-width: 575.98px) {
+      section h2 {
+        font-size: 6vw; } }
 
 .watchpoint {
   background: #e5005a;
@@ -82,6 +100,9 @@ section {
   display: block;
   vertical-align: top;
   position: relative; }
+  @media screen and (max-width: 575.98px) {
+    .watchpoint {
+      padding: 5px 0 5px 8px; } }
   .watchpoint::after {
     content: "";
     width: 0;
@@ -116,6 +137,10 @@ section {
         -ms-filter: grayscale(0);
         -o-filter: grayscale(0);
         filter: grayscale(0); }
+    @media screen and (max-width: 575.98px) {
+      .sitelist__box {
+        width: calc(100%/2.05);
+        padding: 5px 0; } }
   .sitelist__box.is-empty {
     height: 0;
     padding-top: 0;
