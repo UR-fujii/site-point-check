@@ -1,3 +1,29 @@
+// parts
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@500&display=swap');
+
+$bicolor : #e5005a;
+
+// iPad 横以下
+@mixin media-ipad-landscape {
+  @media screen and (max-width: 991.98px) {
+    @content;
+  }
+}
+// iPad 縦以下
+@mixin media-ipad-portrait {
+  @media screen and (max-width: 767.98px) {
+    @content;
+  }
+}
+// iPhone 以下
+@mixin media-iphone {
+  @media screen and (max-width: 575.98px) {
+    @content;
+  }
+}
+
+// common
 body {
   background: #fff2f7;
 }
@@ -8,27 +34,36 @@ ul, li {
   margin-inline-end: 0;
   padding-inline-start: 0;
 }
-$bicolor : #e5005a;
 
-/* common */
-@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@500&display=swap');
 header {
   padding-top: 25px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   h1 {
     font-family: 'M PLUS 1p', sans-serif;
+    font-size: 4vw;
+    @include media-iphone {
+      font-size: 6vw;
+    }
     .header-subI {
-      width: 200px;
-      margin: auto 18vw -2vw;
+      width: 18vw;
+      margin: auto 0 0;
       display: block;
       padding: 10px 15px;
       border-radius: 15px;
-      font-size: .7em;
+      font-size: 2.3vw;
       color: $bicolor;
       vertical-align: top;
       position: relative;
       transform: rotate(-5deg);
+      @include media-iphone {
+        width: 32vw;
+        padding: 15px 5px;
+        margin: auto 3vw 2vw;
+        font-size: 4.5vw;
+      }
       &::before {
         content: "";
         display: block;
@@ -36,7 +71,7 @@ header {
         height: 40px;
         border-left: 2px solid $bicolor;
         position: absolute;
-        left: -15px;
+        left: -10px;
         transform: rotate(-35deg);
         top: 10px;
       }
@@ -55,7 +90,7 @@ header {
     .header-point {
       color: $bicolor;
       font-family: 'Gugi', cursive;
-      font-size: 6vw;
+      font-size: 6.5vw;
     }
   }
 }
@@ -66,6 +101,7 @@ footer {
   text-align: center;
 }
 
+// layout
 .check-site-wrap {
   img {
     max-width: 100%;
@@ -77,12 +113,18 @@ section {
   padding: 45px 10vw;
   background: #fff;
   position: relative;
+  @include media-iphone {
+    padding: 45px 4vw;
+  }
   h2 {
     margin-bottom: 20px;
     font-family: 'M PLUS 1p', sans-serif;
     display: flex;
     align-items: center;
     font-weight: 600;
+    @include media-iphone {
+      font-size: 6vw;
+    }
   }
 }
 .watchpoint {
@@ -94,6 +136,9 @@ section {
   display: block;
   vertical-align: top;
   position: relative;
+  @include media-iphone {
+    padding: 5px 0 5px 8px;
+  }
   &::after {
     content: "";
     width: 0;
@@ -116,6 +161,7 @@ section {
   list-style: none;
   &__box {
     width: calc(100%/4.1);
+    padding: 5px 0;
     .thumb {
       -webkit-filter: grayscale(100%);
       -moz-filter: grayscale(100%);
@@ -131,6 +177,9 @@ section {
         -o-filter: grayscale(0);
         filter: grayscale(0);
       }
+    }
+    @include media-iphone {
+      width: calc(100%/2.05);
     }
   }
   &__box.is-empty {
