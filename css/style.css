@@ -122,7 +122,8 @@ section {
   justify-content: space-between;
   list-style: none; }
   .sitelist__box {
-    width: calc(100%/4.1); }
+    width: calc(100%/4.1);
+    padding: 5px 0; }
     .sitelist__box .thumb {
       -webkit-filter: grayscale(100%);
       -moz-filter: grayscale(100%);
@@ -139,8 +140,7 @@ section {
         filter: grayscale(0); }
     @media screen and (max-width: 575.98px) {
       .sitelist__box {
-        width: calc(100%/2.05);
-        padding: 5px 0; } }
+        width: calc(100%/2.05); } }
   .sitelist__box.is-empty {
     height: 0;
     padding-top: 0;
